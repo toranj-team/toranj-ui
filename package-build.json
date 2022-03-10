@@ -1,9 +1,6 @@
 {
-    "name": "@toranj-ui/core",
+    "name": "@toranj-ui/components",
     "version": "1.0.0",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "types": "dist/index.d.ts",
     "homepage": "https://github.com/toranj-team/toranj-ui",
     "repository": {
         "type": "git",
@@ -32,5 +29,6 @@
         "react-transition-group": {
             "optional": true
         }
-    }
+    },
+    "unpkg": "toranjui.all.min.js"
 }

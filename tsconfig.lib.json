@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "declaration": true,
     "declarationDir": "types",
-    "emitDeclarationOnly": true,
     "module": "esnext",
     "target": "es5",
-    "lib": [ "es6", "dom" ],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
@@ -17,6 +20,7 @@
     "esModuleInterop": true,
     "baseUrl": "src"
   },
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     ".next",
     "node_modules",

@@ -1,4 +1,4 @@
-import { ObjectUtils, classNames } from '../utils';
+import { ObjectUtils, classNames } from '../utils/utils';
 
 type CardTemplateTypes = React.ReactNode | ((props: CardProps) => React.ReactNode);
 
