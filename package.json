@@ -1,11 +1,16 @@
 {
+  "name": "@toranj-ui/core",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "clean-lib": "rimraf dist",
-    "build-lib": "npm run clean-lib && rollup -c"
+    "build-lib": "npm run clean-lib && rollup -c && gulp build-resources"
   },
   "dependencies": {
     "next": "12.1.0",
@@ -20,6 +25,9 @@
     "@types/node": "17.0.21",
     "@types/react": "17.0.39",
     "fs-extra": "^10.0.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglifycss": "^1.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.0",
     "rollup-plugin-dts": "^4.2.0",
