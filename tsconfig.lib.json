@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "types",
-"emitDeclarationOnly": true,
+    "emitDeclarationOnly": true,
     "module": "esnext",
     "target": "es5",
     "lib": [ "es6", "dom" ],

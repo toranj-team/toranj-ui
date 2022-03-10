@@ -1,9 +1,4 @@
 {
-  "name": "toranj-ui",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -28,7 +23,9 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.70.0",
     "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.49.9",
     "tslib": "^2.3.1",
     "typescript": "4.6.2"
   }

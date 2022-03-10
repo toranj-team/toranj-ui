@@ -1,3 +1,4 @@
+import './card.css';
 import { ObjectUtils, classNames } from '../utils';
 
 type CardTemplateTypes = React.ReactNode | ((props: CardProps) => React.ReactNode);

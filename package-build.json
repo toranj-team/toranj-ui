@@ -1,0 +1,36 @@
+{
+    "name": "@toranj-ui/core",
+    "version": "1.0.0",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/index.d.ts",
+    "homepage": "https://github.com/toranj-team/toranj-ui",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/toranj-team/toranj-ui.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/toranj-team/toranj-ui/issues"
+    },
+    "keywords": [
+        "toranj-ui",
+        "react",
+        "ui framework",
+        "component framework",
+        "ui library",
+        "component library",
+        "react components",
+        "responsive components"
+    ],
+    "peerDependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-transition-group": "^4.4.1"
+    },
+    "peerDependenciesMeta": {
+        "react-transition-group": {
+            "optional": true
+        }
+    }
+}

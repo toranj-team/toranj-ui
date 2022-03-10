@@ -4,8 +4,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import dts from 'rollup-plugin-dts';
+import postcss from 'rollup-plugin-postcss';
 
-const packageJson = require('./package.json');
+const packageJson = require('./package-build.json');
 
 export default [
     {
@@ -19,6 +20,9 @@ export default [
             commonjs(),
             typescript({
                 tsconfig: './tsconfig.lib.json',
+                sourceMap: false
+            }),
+            postcss({
                 sourceMap: false
             }),
             terser()
