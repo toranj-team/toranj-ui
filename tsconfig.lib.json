@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "types",
+"emitDeclarationOnly": true,
+    "module": "esnext",
+    "target": "es5",
+    "lib": [ "es6", "dom" ],
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "baseUrl": "src"
+  },
+  "exclude": [
+    ".next",
+    "node_modules",
+    "dist"
+  ]
+}

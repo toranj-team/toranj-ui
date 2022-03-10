@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { ObjectUtils, classNames } from '../utils';
 
 type CardTemplateTypes = React.ReactNode | ((props: CardProps) => React.ReactNode);
@@ -52,15 +51,6 @@ export const Card = (props:CardProps) => {
     );
 }
 
-Card.propTypes = {
-    id: PropTypes.string,
-    header: PropTypes.any,
-    footer: PropTypes.any,
-    title: PropTypes.any,
-    subTitle: PropTypes.any,
-    style: PropTypes.object,
-    className: PropTypes.string
-};
 
 Card.defaultProps = {
     id: null,
