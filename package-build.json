@@ -1,5 +1,7 @@
 {
-    "name": "@toranj-ui/components",
+    "name": "toranj-ui",
+    "main": "tui.all.cjs.min.js",
+    "module": "tui.all.esm.min.js",
     "version": "1.0.0",
     "homepage": "https://github.com/toranj-team/toranj-ui",
     "repository": {
@@ -30,5 +32,5 @@
             "optional": true
         }
     },
-    "unpkg": "toranjui.all.min.js"
+    "unpkg": "tui.all.min.js"
 }

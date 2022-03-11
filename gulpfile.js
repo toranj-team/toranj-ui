@@ -1,6 +1,5 @@
 'use strict';
 
-var del = require('del');
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglifycss = require('gulp-uglifycss'),
@@ -12,10 +11,10 @@ gulp.task('build-css', function () {
         'src/components/lib/' + 'common/common.css',
         'src/components/lib/' + '**/*.css'
     ])
-        .pipe(concat('toranjui.css'))
+        .pipe(concat('tui.css'))
         .pipe(gulp.dest('dist/' + 'resources'))
         .pipe(uglifycss({ "uglyComments": true }))
-        .pipe(rename('toranjui.min.css'))
+        .pipe(rename('tui.min.css'))
         .pipe(gulp.dest('dist/' + 'resources'));
 });
 
@@ -24,11 +23,6 @@ gulp.task('images', function () {
     return gulp.src(['src/components/lib/' + '**/images/*.png', 'src/components/lib/' + '**/images/*.gif'])
         .pipe(flatten())
         .pipe(gulp.dest('dist/' + 'resources/images'));
-});
-
-gulp.task('build-exports', function () {
-    return gulp.src(['exports/*.js', 'exports/*.d.ts'])
-        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('build-meta', function () {
@@ -54,8 +48,9 @@ gulp.task('copy-css', function () {
         .pipe(gulp.dest('./' + 'dist/'));
 });
 
-gulp.task('remove-extra-types', function () {
-    return del('dist/**/types', { force: true });
+gulp.task('copy-types', function () {
+    return gulp.src('dist/types/components/lib/**/*')
+        .pipe(gulp.dest('./' + 'dist/'));
 });
 
 gulp.task('copy-package.json', function () {
@@ -63,6 +58,6 @@ gulp.task('copy-package.json', function () {
         .pipe(gulp.dest('./' + 'dist/'));
 });
 
-//Building project with run sequence
-gulp.task('copy-files', gulp.series('copy-css', 'copy-package.json'));
-gulp.task('build-resources', gulp.series('build-css', 'images', 'build-meta', 'copy-files', 'remove-extra-types'));
+// Building project with run sequence
+gulp.task('copy-files', gulp.series('copy-css', 'copy-package.json', 'copy-types'));
+gulp.task('build-resources', gulp.series('build-css', 'images', 'build-meta', 'copy-files'));

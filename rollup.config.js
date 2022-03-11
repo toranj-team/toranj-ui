@@ -15,7 +15,7 @@ let core = {};
 
 // alias entries
 const ALIAS_COMPONENT_ENTRIES = [
-    { find: '../utils/utils', replacement: 'toranjui/utils' },
+    { find: '../utils/utils', replacement: 'toranj-ui/utils' },
 ];
 
 // dependencies
@@ -81,8 +81,8 @@ const PLUGINS_COMPONENT = [
 ];
 
 function addEntry(name, input, output, isComponent = true) {
-    const exports = name === 'toranjui.api' || name === 'toranjui' ? 'named' : 'auto';
-    const useCorePlugin = ALIAS_COMPONENT_ENTRIES.some(entry => entry.replacement.replace('toranjui/', '') === name.replace('toranjui.', ''));
+    const exports = name === 'tui.api' || name === 'tui' ? 'named' : 'auto';
+    const useCorePlugin = ALIAS_COMPONENT_ENTRIES.some(entry => entry.replacement.replace('toranj-ui/', '') === name.replace('tui.', ''));
     const plugins = isComponent ? PLUGINS_COMPONENT : PLUGINS;
     const external = isComponent ? EXTERNAL_COMPONENT : EXTERNAL;
     const inlineDynamicImports = true;
@@ -164,7 +164,7 @@ function addCore() {
             generateBundle() {
                 Object.entries(core).forEach(([filePath, value]) => {
                     const code = ALIAS_COMPONENT_ENTRIES.reduce((val, entry) => {
-                        const name = entry.replacement.replace('toranjui/', '');
+                        const name = entry.replacement.replace('toranj-ui/', '');
                         val += value[name] + '\n';
 
                         return val;
@@ -191,7 +191,7 @@ function addComponent() {
                     const input = 'src/components/lib/' + folderName + '/' + file;
                     const output = 'dist/' + folderName + '/' + name;
 
-                    addEntry('toranjui.' + folderName, input, output, true);
+                    addEntry('tui.' + folderName, input, output, true);
                 }
             });
         });
@@ -199,9 +199,9 @@ function addComponent() {
 
 function addToranjUI() {
     const input = 'src/components/lib/' + 'index.ts';
-    const output = 'dist/' + 'toranjui.all';
+    const output = 'dist/' + 'tui.all';
 
-    addEntry('toranjui', input, output, false);
+    addEntry('tui', input, output, false);
 }
 
 addComponent();

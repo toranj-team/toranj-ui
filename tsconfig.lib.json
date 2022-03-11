@@ -20,7 +20,7 @@
     "esModuleInterop": true,
     "baseUrl": "src"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src/components/lib/**/*.ts", "src/components/lib/**/*.tsx"],
   "exclude": [
     ".next",
     "node_modules",
