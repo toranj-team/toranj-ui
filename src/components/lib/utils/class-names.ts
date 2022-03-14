@@ -1,4 +1,4 @@
-export const classNames = (...args: any[]): string | undefined => {
+const classNames = (...args: any[]): string | undefined => {
     if (args) {
         let classes: any[] = [];
 
@@ -24,3 +24,5 @@ export const classNames = (...args: any[]): string | undefined => {
 
     return undefined;
 }
+
+export default classNames;

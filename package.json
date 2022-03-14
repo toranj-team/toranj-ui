@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "clean-lib": "rimraf dist",
+    "clean-lib": "rimraf toranj-ui",
     "build-lib": "npm run clean-lib && rollup -c && gulp build-resources"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-flatten": "^0.4.0",
     "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglifycss": "^1.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.0",

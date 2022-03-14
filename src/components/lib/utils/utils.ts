@@ -1,2 +1,2 @@
-export * from './class-names';
-export * from './object-utils';
+export { default as classNames } from './class-names';
+export { default as ObjectUtils } from './object-utils';

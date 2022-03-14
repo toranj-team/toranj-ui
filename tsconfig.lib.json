@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "toranj-ui",
     "declaration": true,
     "declarationDir": "types",
     "module": "esnext",
@@ -24,6 +24,6 @@
   "exclude": [
     ".next",
     "node_modules",
-    "dist"
+    "toranj-ui"
   ]
 }

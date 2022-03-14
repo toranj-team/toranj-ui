@@ -13,9 +13,9 @@ export interface CardProps {
     children?: React.ReactNode;
 }
 
-export const Card = (props:CardProps) => {
+const Card = (props: CardProps) => {
 
-    const renderHeader=()=> {
+    const renderHeader = () => {
         if (props.header) {
             return <div className="p-card-header">{ObjectUtils.getJSXElement(props.header, props)}</div>;
         }
@@ -23,7 +23,7 @@ export const Card = (props:CardProps) => {
         return null;
     }
 
-    const renderBody =()=> {
+    const renderBody = () => {
         const title = props.title && <div className="p-card-title">{ObjectUtils.getJSXElement(props.title, props)}</div>
         const subTitle = props.subTitle && <div className="p-card-subtitle">{ObjectUtils.getJSXElement(props.subTitle, props)}</div>
         const children = props.children && <div className="p-card-content">{props.children}</div>
@@ -61,3 +61,5 @@ Card.defaultProps = {
     style: null,
     className: null
 };
+
+export default Card

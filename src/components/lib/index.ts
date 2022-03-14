@@ -1,2 +1,2 @@
 export * from './utils/utils';
-export * from './card';
+export { default as Card } from './card';

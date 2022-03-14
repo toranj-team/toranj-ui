@@ -145,7 +145,7 @@ function corePlugin() {
                 Object.keys(bundle).forEach(id => {
                     const chunk = bundle[id];
                     const name = id.replace('.min.js', '').replace('.js', '');
-                    const filePath = `./dist/core/core${id.indexOf('.min.js') > 0 ? '.min.js' : '.js'}`;
+                    const filePath = `./toranj-ui/core/core${id.indexOf('.min.js') > 0 ? '.min.js' : '.js'}`;
 
                     core[filePath] ? (core[filePath][name] = chunk.code) : (core[filePath] = { [`${name}`]: chunk.code });
                 });
@@ -189,7 +189,7 @@ function addComponent() {
                 let name = file.split(/.(ts|tsx)$/)[0].toLowerCase();
                 if (name === folderName) {
                     const input = 'src/components/lib/' + folderName + '/' + file;
-                    const output = 'dist/' + folderName + '/' + name;
+                    const output = 'toranj-ui/' + folderName + '/' + name;
 
                     addEntry('tui.' + folderName, input, output, true);
                 }
@@ -199,7 +199,7 @@ function addComponent() {
 
 function addToranjUI() {
     const input = 'src/components/lib/' + 'index.ts';
-    const output = 'dist/' + 'tui.all';
+    const output = 'toranj-ui/' + 'tui.all';
 
     addEntry('tui', input, output, false);
 }
@@ -209,8 +209,8 @@ addToranjUI();
 addCore();
 
 entries.push(    {
-    input: 'dist/types/components/lib/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: "esm" }],
+    input: 'toranj-ui/types/components/lib/index.d.ts',
+    output: [{ file: 'toranj-ui/index.d.ts', format: "esm" }],
     external: [/\.css$/],
     plugins: [dts()]
 })

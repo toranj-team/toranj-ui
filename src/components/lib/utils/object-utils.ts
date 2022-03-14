@@ -1,4 +1,4 @@
-export class ObjectUtils {
+class ObjectUtils {
     static isFunction(obj: any): boolean {
         return !!(obj && obj.constructor && obj.call && obj.apply);
     }
@@ -7,3 +7,5 @@ export class ObjectUtils {
         return this.isFunction(obj) ? obj(...params) : obj;
     }
 }
+
+export default ObjectUtils;
