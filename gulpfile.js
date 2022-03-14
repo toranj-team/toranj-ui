@@ -7,12 +7,12 @@ var gulp = require('gulp'),
     flatten = require('gulp-flatten');
 
 const sass = require('gulp-sass')(require('sass'))
-// const purgecss = require('gulp-purgecss')
+const purgecss = require('gulp-purgecss')
 
 gulp.task('build-css', function () {
     return gulp.src('src/styles/lib/**/*.scss')
         .pipe(sass())
-        // .pipe(purgecss({ content: ['*.html'] }))
+        .pipe(purgecss({ content: ['src/components/lib/**/*.tsx', 'src/components/lib/**/*.ts'] }))
         // .pipe(concat('tui.css'))
         .pipe(gulp.dest('toranj-ui/' + 'resources'))
         .pipe(uglifycss({ "uglyComments": true }))
